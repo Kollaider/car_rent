@@ -5,3 +5,15 @@ def index(request):
 
 def about(request):
     return render(request, 'webapp/about.html')
+
+def services(request):
+    return render(request, 'webapp/services.html')
+
+def single(request):
+    return render(request, 'webapp/../blog/templates/blog/single.html')
+
+def contact(request):
+    return render(request, 'webapp/contact.html')
+
+def cars(request):
+    return render(request, 'webapp/contact.html')
