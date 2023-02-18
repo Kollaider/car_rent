@@ -66,8 +66,8 @@
                   <li {% if request.resolver_match.url_name == 'servises' %}class="active"{% endif %}><a href="{% url 'webapp:services' %}" class="nav-link">Services</a></li>
                   <li {% if request.resolver_match.url_name == 'cars' %}class="active"{% endif %}><a href="{% url 'webapp:cars' %}" class="nav-link">Cars</a></li>
                   <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url 'webapp:about' %}" class="nav-link">About</a></li>
-                  <li {% if request.resolver_match.url_name == 'blog' %}class="active"{% endif %}><a href="../../blog/templates/blog/blog.html" class="nav-link">Blog</a></li>
-                  <li {% if request.resolver_match.url_name == 'conatact' %}class="active"{% endif %}><a href="{% url 'webapp:contact' %}" class="nav-link">Contact</a></li>
+                  <li {% if request.resolver_match.url_name == 'blog' or request.resolver_match.url_name == 'single' %}class="active"{% endif %}><a href="{% url 'blog:blog' %}" class="nav-link">Blog</a></li>
+                  <li {% if request.resolver_match.url_name == 'contact' %}class="active"{% endif %}><a href="{% url 'webapp:contact' %}" class="nav-link">Contact</a></li>
                 </ul>
               </nav>
             </div>
