@@ -1173,7 +1173,12 @@ h1, h2, h3, h4, h5,
     color: #fff; }
 
 .slide-one-item .owl-nav .owl-prev {
-  left: 20px; }
+  left: 20px;}
+
+.owl-next {
+  display: none}
+.owl-prev {
+  display: none}
 
 .slide-one-item .owl-nav .owl-next {
   right: 20px; }
