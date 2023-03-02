@@ -64,7 +64,7 @@
                         <ul class="site-menu main-menu js-clone-nav ml-auto ">
                             <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a
                                     href="{% url 'webapp:home' %}" class="nav-link">Home</a></li>
-                            <li {% if request.resolver_match.url_name == 'servises' %}class="active"{% endif %}><a
+                            <li {% if request.resolver_match.url_name == 'services' %}class="active"{% endif %}><a
                                     href="{% url 'webapp:services' %}" class="nav-link">Services</a></li>
                             <li {% if request.resolver_match.url_name == 'cars' %}class="active"{% endif %}><a
                                     href="{% url 'webapp:cars' %}" class="nav-link">Cars</a></li>
@@ -74,6 +74,19 @@
                                 <a href="{% url 'blog:blog' %}" class="nav-link">Blog</a></li>
                             <li {% if request.resolver_match.url_name == 'contact' %}class="active"{% endif %}><a
                                     href="{% url 'webapp:contact' %}" class="nav-link">Contact</a></li>
+
+
+                            {% if user.username %}
+                                <li style="color: yellow">{{ user.username }}</li>
+                                <li {% if request.resolver_match.url_name == 'logout' %}class="active"{% endif %}><a
+                                        href="{% url 'webapp:logout' %}" class="nav-link">Logout</a></li>
+                            {% else %}
+                                <li {% if request.resolver_match.url_name == 'login' %}class="active"{% endif %}><a
+                                        href="{% url 'webapp:login' %}" class="nav-link">Login</a></li>
+                                <li {% if request.resolver_match.url_name == 'register' or request.resolver_match.url_name == 'register_done' %}class="active"{% endif %}>
+                                    <a
+                                            href="{% url 'webapp:register' %}" class="nav-link">Register</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
